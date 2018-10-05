@@ -2,55 +2,39 @@
 <html>
 
 <head>
-    <title>Neighbourhood Map</title>
-
-    <meta name="viewport" content="width=device-width">
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" >
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+	<title>Neighbourhood Map</title>
+	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"
+	 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 
 <body>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-md-4 ">
-
 				<h1 id="sidebar-header"></br>list of my best places to visit in egypt</h1>
-
-        <!-- <img src="https://www.google.com/cbk?cb_client=apiv3&output=report&image_key=!1e10!2sAF1QipPJsdo19QoAR4PvKlsIDXNmF_bnKiVHY8SXSNb0"> -->
 				<input id="my-input" class="form-control" type="text" placeholder="Search here..." name="filter" data-bind="textInput: filter">
-
 				<nav>
 					<ul id="sidebar-list" class="list-group" data-bind="foreach: filterSearch">
-						<li class="list-group-item" data-bind="text: name, click: $parent.showMarkerInfo.bind(name)"></li>
+						<li class="list-group-item" data-bind="text: name, click: $parent.animateMarker.bind(name)"></li>
 					</ul>
 				</nav>
 			</div>
 			<div class="col-sm-8">
 				<div class="col-sm-12" id='map'></div>
-        <div class="col-sm-6" id="pano"></div>
 			</div>
-
-		</div>	<!-- </div> -->
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-	<script src="js/data.js"></script>
-	<script src="js/maps.js"></script>
-	<script src="js/knockout-3.4.2.js"></script>
-	<script src="js/binding.js"></script>
-	<script>
-		function googleMapsError() {
-			alert("Google Maps failed to load. Please check your connection!");
-		}
-	</script async defer>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		 crossorigin="anonymous"></script>
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+		<script src="js/data.js"></script>
+		<script src="js/maps.js"></script>
+		<script src="js/knockout-3.4.2.js"></script>
+		<script src="js/binding.js"></script>
 </body>
 
 </html>
-
-
-//sk.eyJ1IjoiaWJyYWhpbXRhaGEiLCJhIjoiY2ptc3p4NTd3MGNnczNxcXlscnNsMDg3ZSJ9.nxD4v2C-HjyExeP0Bo1Wbg

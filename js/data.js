@@ -8,10 +8,10 @@ var MARKERS = [
 	{ name: "Alexandria", position: { lat: 31.235792, lng: 29.948900 } },
 	{ name: "san Stefano", position: { lat: 31.245616, lng: 29.967228 } },
 	{ name: "Hurghada", position: { lat: 27.252378, lng: 33.803864 } },
-	//	{name: "Sharm El-Sheikh", position: {lat:27.911318,lng:34.321621}}
+	{name: "Sharm El-Sheikh", position: {lat:27.911318,lng:34.321621}}
 ];
 
-var CURRENT_LOCATION = [34.321621, 27.911318];
+var CURRENT_LOCATION = { lat: 30.048831, lng: 31.235280 };
 
 var MAPPER = {
 	Karnak: 0,
@@ -22,5 +22,6 @@ var MAPPER = {
 	Siwa: 5,
 	Alexandria: 6,
 	san: 7,
-	Hurghada: 8
+	Hurghada: 8,
+	Sharm: 9
 }

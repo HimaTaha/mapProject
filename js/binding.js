@@ -9,15 +9,17 @@ var ViewModel = function () {
 	MARKERS.forEach(function (stationItem) {
 		self.locationList.push(new Stations(stationItem));
 	})
-	this.showMarkerInfo = function (item) {
-		clearSelection();
+	this.animateMarker = function (item) {
 		let id = "marker_" + MAPPER[item.name().split(" ")[0]]
+		clearSelection(id);
 		let clickedPlace = document.getElementById(id)
 		clickedPlace.click();
+
 	};
-	// Filter Function (includes Marker functions that are handled via Knockout's computed observable)
+	/*
+	filter algorithm :checking for matching and set the un matched items to invisible
+	*/
 	this.filter = ko.observable("");
-	// Computed observable from Knockout which filters out arrays and markers from the input
 	this.filterSearch = ko.computed(function () {
 		var filter = self.filter().toLowerCase();
 		if (markerLoaded) {
@@ -62,7 +64,6 @@ function setVisible(index, flag) {
 function selected(index) {
 	chosenMarker = document.getElementById("marker_" + index)
 	if (chosenMarker) {
-		let classes = chosenMarker.classList
 		if (chosenMarker.classList[0] == "normal-marker") {
 			chosenMarker.classList.remove("normal-marker")
 			chosenMarker.className = 'chosen-marker mapboxgl-marker mapboxgl-marker-anchor-center';
@@ -72,19 +73,22 @@ function selected(index) {
 function deselected(index) {
 	chosenMarker = document.getElementById("marker_" + index)
 	if (chosenMarker) {
-		let classes = chosenMarker.classList
 		if (chosenMarker.classList[0] == "chosen-marker") {
 			chosenMarker.classList.remove("chosen-marker")
 			chosenMarker.className = 'normal-marker mapboxgl-marker mapboxgl-marker-anchor-center';
 		}
 	}
 }
-var clearSelection = function () {
+var clearSelection = function (id) {
 	for (var i = 0; i < MARKERS.length; i++) {
+		if ("marker_" + i == id) {
+			continue
+		}
 		deselected(i)
 	}
+
 }
-var showAll = function() {
+var showAll = function () {
 	for (var i = 0; i < MARKERS.length; i++) {
 		setVisible(i, true);
 	}
