@@ -56,13 +56,13 @@ body {
 }
 
 #sidebar-header {
-	font-size: 20px;
+	font-size: 17px;
 	text-align:center;
 	color: #FFFFFF;
 }
 
 .form-control {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .list-group {
@@ -105,6 +105,9 @@ li:hover {
 .visible-marker{
 	display: block;
 }
-#poopup{
+.description{
 	max-width: 100px;
+}
+#info-box{
+	margin-bottom: 25px;
 }

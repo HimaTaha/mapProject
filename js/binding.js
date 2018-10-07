@@ -14,6 +14,8 @@ var ViewModel = function () {
 		clearSelection(id);
 		let clickedPlace = document.getElementById(id)
 		clickedPlace.click();
+		let infoBox = document.getElementById("info-box")
+		infoBox.innerHTML = `<img class="col-sm-12 col-md-12" src= ${MARKERS[MAPPER[item.name().split(" ")[0]]].descriptions}>`
 
 	};
 	/*

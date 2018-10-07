@@ -15,8 +15,9 @@ function initMap() {
 			center: CURRENT_LOCATION
 
 	});
+
 	for (var i = 0; i < MARKERS.length; i ++) {
-		var popupContent = `<img id="poopup" src="${MARKERS[i].descriptions}">`
+		var popupContent = `<img class="description" src="${MARKERS[i].descriptions}">`
 		var popup = new mapboxgl.Popup()
 		.setHTML(popupContent);
 		var el = document.createElement('div');
