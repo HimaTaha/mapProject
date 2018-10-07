@@ -105,3 +105,6 @@ li:hover {
 .visible-marker{
 	display: block;
 }
+#poopup{
+	max-width: 100px;
+}

@@ -29,8 +29,25 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		 crossorigin="anonymous"></script>
-		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+
+		 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script> 
+		 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' /> 
+		<!-- <script  async defer >
+			$.getScript("https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js")
+				.done(function (script, textStatus) {
+					$.getScript("https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css")
+					.done(initmap())
+						.fail(function (jqxhr, settings, exception) {
+							alert("you have problem in your connection")
+							console.log(exception);
+						});
+				})
+				.fail(function (jqxhr, settings, exception) {
+					alert("you have problem in your connection")
+					console.log(exception);
+
+				});
+		</script> -->
 		<script src="js/data.js"></script>
 		<script src="js/maps.js"></script>
 		<script src="js/knockout-3.4.2.js"></script>
