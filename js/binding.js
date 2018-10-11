@@ -14,9 +14,9 @@ var ViewModel = function () {
 		clearSelection(id);
 		let clickedPlace = document.getElementById(id)
 		clickedPlace.click();
-		let infoBox = document.getElementById("info-box")
-		infoBox.innerHTML = `<img class="col-sm-12 col-md-12" src= ${MARKERS[MAPPER[item.name().split(" ")[0]]].descriptions}>`
-
+		console.log(MARKERS[MAPPER[item.name().split(" ")[0]]]);
+		
+		getInfo(MARKERS[MAPPER[item.name().split(" ")[0]]].position)
 	};
 	/*
 	filter algorithm :checking for matching and set the un matched items to invisible
@@ -102,6 +102,27 @@ var stringStartsWith = function (string, startsWith) {
 	}
 	return string.substring(0, startsWith.length) === startsWith;
 };
+
+var getInfo = function (pos) {
+	let key = "pk.eyJ1IjoiaWJyYWhpbXRhaGEiLCJhIjoiY2ptc3pyNWFhMGdlajN2bnVmNDdmOTh5cCJ9.j6C6vDOhtwYY8M5m14O5_g"
+	$.ajax ({
+        type: "GET",
+        url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${pos.lng},${pos.lat}.json?access_token=${key}`,
+        dataType: 'json',
+        async: true,
+
+        success: function (data) {
+            //successful authentication here
+			console.log(data.features[0]);
+			let infoBox = document.getElementById("info-box")
+		infoBox.innerHTML = `<p class="col-sm-12 col-md-12">${data.features[0].place_name}</p>`
+        },
+        error: function(XHR, textStatus, errorThrown) {
+            alert("error: " + textStatus);
+            alert("error: " + errorThrown);
+        }
+    })
+}
 
 var vm = new ViewModel();
 ko.applyBindings(vm);

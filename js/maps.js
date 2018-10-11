@@ -40,12 +40,6 @@ function initMap() {
 	}
 	markerLoaded = true;
 
-	function infoWindowListener(marker) {
-		console.log("hamadas");
-		infoWindow.addListener('closeclick', function() {
-			marker.setAnimation(null);
-		});
-	}
 }
 
 initMap()
