@@ -9,7 +9,7 @@ var MARKERS = [
 	{name: "Sharm El-Sheikh", position: {lat:27.911318,lng:34.321621}, descriptions: "https://www.telegraph.co.uk/content/dam/Travel/leadAssets/24/49/sharm-thomson2_2449064a.jpg?imwidth=450"}
 ];
 
-var CURRENT_LOCATION = { lat: 30.048831, lng: 31.235280 };
+var CURRENT_LOCATION = { lat:26.533705, lng: 31.729255 };
 
 var MAPPER = {
 	Karnak: 0,

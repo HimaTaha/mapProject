@@ -18,7 +18,7 @@
 				<input id="my-input" class="form-control" type="text" placeholder="Search here..." name="filter" data-bind="textInput: filter">
 				<nav>
 					<ul id="sidebar-list" class="list-group" data-bind="foreach: filterSearch">
-						<li class="list-group-item" data-bind="text: name, click: $parent.animateMarker.bind(name)"></li>
+						<li class="list-group-item" data-bind="text: name, click: animateMarker.bind(name)"></li>
 					</ul>
 				</nav>
 				<div id="info-box" class="col-sm-12 col-md-12"></div>
@@ -28,6 +28,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- loading libraries and files and handling error on loading  -->
 	<script src="js/data.js"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" onerror="errorFunction()"></script>
 	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" onerror="errorFunction()"
@@ -37,9 +38,7 @@
 	 <script defer src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js' onerror="errorFunction()"></script>
 	 <link  href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' onerror="errorFunction()" />
 	 <script defer src="js/maps.js"></script>
-	 <script async src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js' onerror="errorFunction()"></script>
-	 <link async href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' onerror="errorFunction()" />
-	 <script defer src="js/binding.js"></script>
+	 <script src="js/binding.js"></script>
 	 <script>
 		function errorFunction() {
 			alert('please chck your internet onnection !');

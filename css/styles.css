@@ -24,6 +24,10 @@
 #map {
 	height: 100%;
 }
+#nfo-box{
+	border: #FFFFFF ;
+	border-width: 5px;
+}
 
 html, body {
 	height: 100%;
@@ -108,6 +112,16 @@ li:hover {
 .description{
 	max-width: 100px;
 }
-#info-box{
-	margin-bottom: 25px;
+.error-message{
+	color: red
+}
+.info-title{
+	font-size: 15px;
+	display: inline;
+	color: azure
+}
+.info-data{
+	display: inline;
+	color: cyan;
+    font: initial;
 }
