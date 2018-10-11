@@ -1,9 +1,16 @@
 # Neighbourhood Map
 
 this is my implementation of Neighbourhood Map Project in udacity fullstack nanodegree
+## Running the project
 
+using chrome, open the 'index.html' file .
+make sure to have internet connection working 
 
-## Project Rubric
+### used libraries
+i used MapBox library for lodaing the map and getting information for each location .
+i used (jQuery, bootstrap ) to hande request and styles of the page 
+No other external libraries were used 
+#### Project Rubric
 
 |SECTION||CRITERIA|SPECS. MET?|
 |---|---|---|---|
