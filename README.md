@@ -1,16 +1,20 @@
 # Neighbourhood Map
 
 this is my implementation of Neighbourhood Map Project in udacity fullstack nanodegree
-## Running the project
+## Desriptions
+
+list of pokemons located in egypt and showing it's location address and image of that pokemon to identify if you found it . 
+### Running the project
 
 using chrome, open the 'index.html' file .
 make sure to have internet connection working 
 
-### used libraries
-i used MapBox library for lodaing the map and getting information for each location .
-i used (jQuery, bootstrap ) to hande request and styles of the page 
+#### Used libraries
+1. i used MapBox library for lodaing the map and getting information for each location .
+2. using https://www.pokeapi.co to get image of selected pokemon
+3. i used (jQuery, bootstrap ) to hande request and styles of the page 
 No other external libraries were used 
-#### Project Rubric
+##### Project Rubric
 
 |SECTION||CRITERIA|SPECS. MET?|
 |---|---|---|---|

@@ -112,6 +112,7 @@ var markerHandler = function(id) {
 		chosenMarker.className = 'chosen-marker mapboxgl-marker mapboxgl-marker-anchor-center';
 		clearSelection(id)
 		getInfo(MARKERS[parseInt(id.split("_")[1])].position)
+		getImage(MARKERS[parseInt(id.split("_")[1])].name)
 	}else{
 		// marker was already chosen, so clear it's info box and it's color 
 		clearInfo()
@@ -141,6 +142,33 @@ var getInfo = function (pos) {
 			alert("error: " + errorThrown);
 		}
 	})
+}
+
+var getImage = function(name){
+	var url = 'https://api.pokemontcg.io/v1/cards?name=' + name;
+
+	$.ajax({
+		type: "GET",
+		url: url,
+		dataType: 'json',
+		async: true,
+
+		success: function (data) {
+			// setting the image of pokemon 
+			var imgUrl = data.cards[0].imageUrl;
+			let imagePopup = document.getElementById("description_"+name)
+			imagePopup.setAttribute("src", imgUrl)
+
+		},
+		error: function (XHR, textStatus, errorThrown) {
+			// handlingrequest error 
+			let infoBox = document.getElementById("info-box")
+			infoBox.innerHTML = `<p class="col-sm-12 col-md-12 error-message">${textStatus}</p>`
+			alert("error: " + textStatus);
+			alert("error: " + errorThrown);
+		}
+	})
+
 }
 
 var clearInfo = function () {
