@@ -145,8 +145,8 @@ var getInfo = function (pos) {
 }
 
 var getImage = function(name){
-	var client_secret = "A2YTPHIRX3JR3JIERHRYJ5RORVZCCJBFYOIFMUK1PTCNJPWO&v=20180323"
-	var client_id = "JKSESBEYJ2FJSFXV5NZMQI0C5SHLVALQLIY0PPIGPDTSGHVN"
+	var client_secret = "KRPZBXL5EKOGTEKHGTVHVJHADBO0TBHAYEUJRCHFJJMUR4TL&v=20180323"
+	var client_id = "SPP3MNNQTMQVVMYDWNGVXE1QBZNITOEK25WLJB52ALQSPZ2N"
 	var id = FOURSQUARE[name.split(" ")[0]]
 	var url = `https://api.foursquare.com/v2/venues/${id}/photos?client_id=${client_id}&client_secret=${client_secret}`
 	$.ajax({
