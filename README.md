@@ -1,9 +1,9 @@
 # Neighbourhood Map
 
 this is my implementation of Neighbourhood Map Project in udacity fullstack nanodegree
-## Desriptions
+## Desription
 
-list of pokemons located in egypt and showing it's location address and image of that pokemon to identify if you found it . 
+list of pokemons located in egypt and showing the location address and image of each pokemon to identify if you found it . 
 ### Running the project
 
 using chrome, open the 'index.html' file .
