@@ -19,7 +19,7 @@ function initMap() {
 	// adding markers to map 
 	for (var i = 0; i < MARKERS.length; i ++) {
 		// image shown in popup
-		var popupContent = `<img class="description" id=description_${MARKERS[i].name} alt="loading image">`
+		var popupContent = `<img class="description" id=description_${MARKERS[i].name.split(" ")[0]} alt="loading image">`
 		var popup = new mapboxgl.Popup()
 		.setHTML(popupContent);
 		var el = document.createElement('div');

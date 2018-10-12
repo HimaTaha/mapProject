@@ -145,20 +145,21 @@ var getInfo = function (pos) {
 }
 
 var getImage = function(name){
-	var url = 'https://api.pokemontcg.io/v1/cards?name=' + name;
-
+	var client_secret = "A2YTPHIRX3JR3JIERHRYJ5RORVZCCJBFYOIFMUK1PTCNJPWO&v=20180323"
+	var client_id = "JKSESBEYJ2FJSFXV5NZMQI0C5SHLVALQLIY0PPIGPDTSGHVN"
+	var id = FOURSQUARE[name.split(" ")[0]]
+	var url = `https://api.foursquare.com/v2/venues/${id}/photos?client_id=${client_id}&client_secret=${client_secret}`
 	$.ajax({
 		type: "GET",
 		url: url,
 		dataType: 'json',
 		async: true,
-
 		success: function (data) {
 			// setting the image of pokemon 
-			var imgUrl = data.cards[0].imageUrl;
-			let imagePopup = document.getElementById("description_"+name)
+			var imgdata = data.response.photos.items[0]
+			var imgUrl = `${imgdata.prefix}${imgdata.width}x${imgdata.height}${imgdata.suffix}`
+			let imagePopup = document.getElementById("description_"+ name.split(" ")[0])
 			imagePopup.setAttribute("src", imgUrl)
-
 		},
 		error: function (XHR, textStatus, errorThrown) {
 			// handlingrequest error 
